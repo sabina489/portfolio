@@ -5,6 +5,7 @@
 __pycache__
 db.sqlite3
 media
+media_root
 
 # Backup files # 
 *.bak 
@@ -94,7 +95,28 @@ coverage.xml
 celerybeat-schedule.* 
 
 # SageMath parsed files 
-*.sage.py 
+*.sage.py <!--===== PORTFOLIO =====-->
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section-title">Portfolio</h2>
+
+                
+                <div class="portfolio__container bd-grid">
+
+                    {% for portfolio in portfolios %}
+                    
+                    <div class="portfolio__img">
+                        <img src="{{ portfolio.image.url }}" alt="">
+
+                        <div class="portfolio__link">
+                            <a href="{{ portfolio.link }}" class="portfolio__link-name">View details</a>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    
+                </div>
+                
+            </section>
 
 # Environments 
 .env 
