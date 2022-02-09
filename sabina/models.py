@@ -26,7 +26,7 @@ class About(models.Model):
 
     def __str__(self):
         return self.career
-#signals : preshape, postpost, 
+ 
 #one to one field
 class Profile(models.Model):
     about = models.ForeignKey(About,
