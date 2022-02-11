@@ -26,9 +26,11 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Projects</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        
                     </ul>
                 </div>
 
@@ -79,6 +81,44 @@
                 </div>
             </section>
 
+             <!--===== EDUCATION =====-->
+             <div id="education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2016-2018</h5>
+                        <h6>College Degree in Science </h6>
+                        <p>DAV College</p>
+                    </li>
+                    <li>
+                     <h5>2018-2022</h5>
+                     <h6>Bachelor's Degree in CSIT </h6>
+                     <p>Academia International College</p>
+                 </li>
+                </ul>
+            </div>
+             {% comment %} <section class="education section" id="education">
+                <h2 class="education-title">Education</h2>
+                <div class="skills__box">
+                
+                
+                <div class="education__container bd-grid">
+                    <h2 class="education__subtitle">{{ education.year }}</h2>
+
+
+
+                    {% for education in education %}
+                    
+                    <div class="education__year">
+                       
+
+                    {% endfor %}
+                    </div>
+                    
+                </div>
+                
+            </section> {% endcomment %}
+
              
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
@@ -103,20 +143,20 @@
                 </div>
             </section>
 
-            <!--===== PORTFOLIO =====-->
-            <section class="portfolio section" id="portfolio">
-                <h2 class="section-title">Portfolio</h2>
+            <!--===== Projects =====-->
+            <section class="project section" id="project">
+                <h2 class="section-title">Projects</h2>
 
                 
-                <div class="portfolio__container bd-grid">
+                <div class="project__container bd-grid">
 
-                    {% for portfolio in portfolios %}
+                    {% for project in project %}
                     
-                    <div class="portfolio__img">
-                        <img src="{{ portfolio.image.url }}" alt="">
+                    <div class="project__img">
+                        <img src="{{ project.image.url }}" alt="">
 
-                        <div class="portfolio__link">
-                            <a href="{{ portfolio.link }}" class="portfolio__link-name">View details</a>
+                        <div class="project__link">
+                            <a href="{{ project.link }}" class="project__link-name">View details</a>
                         </div>
                     </div>
 
@@ -136,11 +176,7 @@
                     <div class="contact__info">
                         <h3 class="contact__subtitle">EMAIL</h3>
                         <span class="contact__text">Karkisabina869@gmail.com</span>
-<!-- 
-                        <h3 class="contact__subtitle">PHONE</h3>
-                        <span class="contact__text">+20 999-999</span>
-                        <h3 class="contact__subtitle">ADRESS</h3>
-                        <span class="contact__text">My contry</span> -->
+
                     </div>
 
                     <div class="contact__info">
@@ -149,15 +185,6 @@
                         <span class="contact__text">9841053490</span>
 
                     </div>
-
-                    <!-- <form action="" class="contact__form">
-                        <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="mail" placeholder="Email" class="contact__input">
-                        </div>
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="submit" value="Enviar" class="contact__button">
-                    </form> -->
                 </div>
             </section>
         </main>
@@ -175,8 +202,9 @@
                     <ul>
                         <li><a href="#home" class="footer__link">Home</a></li>
                         <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#about" class="footer__link">Education</a></li>
                         <li><a href="#skills" class="footer__link">Skills</a></li>
-                        <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                        <li><a href="#portfolio" class="footer__link">Projects</a></li>
                         <li><a href="#Contact" class="footer__link">Contact</a></li>
                     </ul>
                 </div>

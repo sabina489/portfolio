@@ -60,11 +60,20 @@ class Skills(models.Model):
 
 # PORTFOLIO SECTION
 
-class Portfolio(models.Model):
-    image = models.ImageField(upload_to='portfolio/')
+class Project(models.Model):
+    image = models.ImageField(upload_to='project/')
     link = models.URLField(max_length=200)
 
     def __str__(self):
-        return f'Portfolio {self.id}'
+        return f'Project {self.id}'
+
+# Education Section
+class Education(models.Model):
+    year = models.CharField(max_length=50)
+    level = models.CharField(max_length=80)
+
+    def __str__(self):
+        return f'Education {self.id}'
+    
 
 
