@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Home, About, Profile, Category, Skills, Project, Education
 
+#rest framework
+#from sabina.models import Sabina
+
+
 
 def index(request):
 
