@@ -1,0 +1,57 @@
+{% comment %} Skills section {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio responsive complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                
+                <div>
+                    <a href="#" class="nav__logo">{{ home.name }}</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>  
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills__container bd-grid">
+        <div class="skills__box">
+            {% for category in categories %}
+            <h3 class="skills__subtitle">{{category.name}}</h3>
+                {% for skills in category.skills_set.all %}
+                
+                    <span class="skills__name">{{skills.skill_name}}</span>
+                {% endfor %}
+            {% endfor %}
+            
+            
+        </div>
+
+        <div class="skills__img">
+            <img src="{% static 'assets/img/skill.jpg' %}" alt="">
+        </div>
+    </div>
+</section>

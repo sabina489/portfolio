@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Projects</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                
+                <div>
+                    <a href="#" class="nav__logo">{{ home.name }}</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Projects</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <section class="project section" id="project">
+            <h2 class="section-title">Projects</h2>
+
+            
+            <div class="project__container bd-grid">
+
+                {% for project in project %}
+                
+                <div class="project__img">
+                    <img src="{{ project.image.url }}" alt="">
+
+                    <div class="project__link">
+                        <a href="{{ project.link }}" class="project__link-name">View details</a>
+                    </div>
+                </div>
+
+                {% endfor %}
+                
+            </div>
+            
+        </section>
