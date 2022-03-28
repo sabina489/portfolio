@@ -31,6 +31,7 @@ from .models import Home, About, Profile, Category, Skills, Project, Education
 #     def create(self, validate_data):
 #         return About.objects.create(**validate_data)
 
+#About section
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
         model = About
@@ -50,11 +51,11 @@ class HomeSerializer(serializers.ModelSerializer):
             'name',
             'greetings_1',
             'greetings_2',
-            'profile_img',
             'picture',
             'updated',
         ]
 
+#Project Section
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = About
@@ -63,12 +64,22 @@ class ProjectSerializer(serializers.ModelSerializer):
             'link',
         ]
 
+#Contact section
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = About
         fields = [
             'phone',
             'email',
+        ]
+
+#Skills Serializer
+class SkillsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Skills
+        fields = [
+            'category',
+            'skill_name',
         ]
 
 #Education Serializer

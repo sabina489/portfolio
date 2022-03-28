@@ -15,7 +15,6 @@ class Home(models.Model):
 
 
 # ABOUT SECTION
-
 class About(models.Model):
     heading = models.CharField(max_length=50)
     career = models.CharField(max_length=30)
@@ -38,7 +37,6 @@ class Profile(models.Model):
 
 
 # SKILLS SECTION
-
 class Category(models.Model):
     name = models.CharField(max_length=20)
 
@@ -59,7 +57,6 @@ class Skills(models.Model):
     
 
 # PORTFOLIO SECTION
-
 class Project(models.Model):
     image = models.ImageField(upload_to='project/')
     link = models.URLField(max_length=200)

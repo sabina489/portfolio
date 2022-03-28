@@ -37,9 +37,6 @@
     
 #     return render(request, 'index.html', context)
 
-
-
-
 from pipes import Template
 from typing import List
 from django.shortcuts import render
@@ -47,7 +44,7 @@ from django.views import generic
 from django.urls import reverse
 from django.views.generic.list import ListView
 from .models import About, Category, Education, Home, Project, Skills, Contact
-from .serializers import AboutSerializer, HomeSerializer, ContactSerializer, ProjectSerializer
+from .serializers import AboutSerializer, HomeSerializer, ContactSerializer, ProjectSerializer, EducationSerializer, SkillsSerializer
 from rest_framework import generics
 
 from rest_framework.generics import (
@@ -68,9 +65,10 @@ class HomeList(generics.ListCreateAPIView):
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
 
-class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
+class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
+
         
 # class HomeListView(ListView):
 #     model = Home
@@ -102,8 +100,6 @@ class AboutDetail(generics.RetrieveUpdateDestroyAPIView):
 #         return About.objects.latest('created')
 
 
-
-
 #Skills Section
 class SkillsListView(ListView):
     template_name = 'skills.html'
@@ -111,6 +107,16 @@ class SkillsListView(ListView):
 
     def get_queryset(self):
         return Skills.objects.all()
+
+#Create skills
+class SkillsList(generics.ListCreateAPIView):
+    queryset = About.objects.all()
+    serializer_class = SkillsSerializer
+
+#Retrieve skills section
+class SkillsDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = About.objects.all()
+    serializer_class = SkillsSerializer
 
 #Contact Section
 # class ContactListView(ListView):
@@ -127,12 +133,12 @@ class ContactListView(ListView):
     def get_queryset(self):
         return Contact.objects.all()
 
-#Create Contact
+#Create Contact section
 class ContactList(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
-#Retrieve about section
+#Retrieve contact section
 class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
@@ -146,15 +152,17 @@ class EducationListView(ListView):
     def get_queryset(self):
         
         return Education.objects.all()
-#Create Education
-# class EducationList(generics.ListCreateAPIView):
-#     queryset = Education.objects.all()
-#     serializer_class = EducationSerializer
 
-# #Retrieve about section
-# class EducationDetail(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Education.objects.all()
-#     serializer_class = EudcationSerializer
+#Create Education section
+class EducationList(generics.ListCreateAPIView):
+    queryset = Education.objects.all()
+    serializer_class = EducationSerializer
+
+#Retrieve education section
+class EducationDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = About.objects.all()
+    serializer_class = EducationSerializer
+
 
 
 #Projects section
@@ -165,23 +173,46 @@ class ProjectListView(ListView):
     def get_queryset(self):
         project = Project.objects.all()
 
-#Create Project
+#Create Project section
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
-#Retrieve about section
+#Retrieve project section
 class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
         
-
-    
-
 #Api of AboutSerializer
 class AboutListAPIView(ListAPIView):
     serializer_class = AboutSerializer
     queryset = About.objects.all()
+
+#Api of ProjectSerializeer
+class ProjectListAPIView(ListAPIView):
+    serializer_class = ProjectSerializer
+    queryset = Project.objects.all()
+
+#Api of SkillsSerializer
+class SkillsListAPIView(ListAPIView):
+    serializer_class = SkillsSerializer
+    queryset = Skills.objects.all()
+
+#Api of HomeSerializer
+class HomeListAPIView(ListAPIView):
+    serializer_class = HomeSerializer
+    queryset = Home.objects.all()
+
+#Api of EducationSerializer
+class EducationListAPIView(ListAPIView):
+    serializer_class = EducationSerializer
+    queryset = Education.objects.all()
+
+#Api of ContactSerializer
+class ContactListAPIView(ListAPIView):
+    serializer_class = ContactSerializer
+    queryset = Contact.objects.all()
+
 # class AboutListView(ListView):
 #     model = About
 
