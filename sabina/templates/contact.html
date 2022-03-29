@@ -36,7 +36,7 @@
         </header>
 
  <!--===== CONTACT =====-->
- <section class="contact section" id="contact">
+ {% comment %} <section class="contact section" id="contact">
     <h2 class="section-title">Contact</h2>
 
     <div class="contact__container bd-grid">
@@ -54,4 +54,12 @@
         </div>
     </div>
 </section>
-</main>
+</main> {% endcomment %}
+
+<section class="contact" id="contact">
+    <div class="contact__container bd-grid">
+        <h1 class="contact__title"><span>{{ contact.phone }}</span><br>{{ contact.email}}.</h1>
+
+        <div class="contact__scroll">
+            <a href="#contact" class="contact__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
+</section>

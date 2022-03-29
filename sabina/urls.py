@@ -33,7 +33,9 @@ urlpatterns = [
     path('api/about/create', views.AboutList.as_view()),
     path('api/about/<int:pk>/', views.AboutDetail.as_view()),
     
+    
     #Projects sections
+    path('project/', ProjectListView.as_view()),
     path('api/project', ProjectListAPIView.as_view()),
     path('api/project/create', views.ProjectList.as_view()),
     path('api/project/<int:pk>/', views.ProjectDetail.as_view()),
@@ -44,7 +46,7 @@ urlpatterns = [
     path('api/education/create', views.EducationList.as_view()),
     path('api/education/<int:pk>/', views.EducationDetail.as_view()),
 
-    #Skiills section
+    #Skills section
     path('skills/', SkillsListView.as_view()),
     path('api/skills', SkillsListAPIView.as_view()),
     path('api/skills/create', views.SkillsList.as_view()),
@@ -60,7 +62,7 @@ urlpatterns = [
 
     # path('education/',TemplateView.as_view(template_name="education.html")),
     # path('skills/',TemplateView.as_view(template_name="skills.html")),
-    # path('projects/',TemplateView.as_view(template_name="projects.html")),
+    #path('project/',TemplateView.as_view(template_name="projects.html")),
     # path('contact/',TemplateView.as_view(template_name="contact.html")),
 
     #Index section

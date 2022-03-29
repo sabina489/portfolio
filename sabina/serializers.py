@@ -58,7 +58,7 @@ class HomeSerializer(serializers.ModelSerializer):
 #Project Section
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = About
+        model = Project
         fields = [
             'image',
             'link',

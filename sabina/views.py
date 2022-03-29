@@ -48,7 +48,8 @@ from .serializers import AboutSerializer, HomeSerializer, ContactSerializer, Pro
 from rest_framework import generics
 
 from rest_framework.generics import (
-    ListAPIView
+    ListAPIView,
+    RetrieveUpdateDestroyAPIView
 )
 
 #Home Section
@@ -90,6 +91,8 @@ class AboutList(generics.ListCreateAPIView):
 class AboutDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = About.objects.all()
     serializer_class = AboutSerializer
+
+
 
 # #Create
 # class AboutCreateView(ListView):
