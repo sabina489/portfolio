@@ -27,6 +27,7 @@ class About(models.Model):
         return self.career
  
 #one to one field
+#Profile section
 class Profile(models.Model):
     about = models.ForeignKey(About,
                                 on_delete=models.CASCADE)
@@ -73,10 +74,11 @@ class Education(models.Model):
         return f'Education {self.id}'
     
 
-#Contact Section
+# Contact Section
 class Contact(models.Model):
     phone = models.CharField(max_length=40)
     email = models.CharField(max_length=50)
 
     def __str__(self):
         return self.phone
+

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Home, About, Profile, Category, Skills, Project, Education,Contact
 
-
 # Home
 admin.site.register(Home)
 

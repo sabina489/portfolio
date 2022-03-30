@@ -122,13 +122,6 @@ class SkillsDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SkillsSerializer
 
 #Contact Section
-# class ContactListView(ListView):
-#     template_name = 'contact.html'
-#     context_object_name = 'Contact'
-
-#     def get_queryset(self):
-#         contact = Contact.objects.all()
-
 class ContactListView(ListView):
     template_name = 'contact.html'
     context_object_name = 'contact'
