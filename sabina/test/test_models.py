@@ -1,5 +1,5 @@
 from django.test import TestCase
-from sabina.models import Category, Education, Home,About,Project,Contact
+from sabina.models import Category, Education, Home,About,Project,Contact, Skills
 from django.db import models
 
 #Home Models test
@@ -38,6 +38,7 @@ class CategoryTest(TestCase):
     def test_Category_creation(self):
         w = self.create_Category()
         self.assertEqual(w.__str__(), w.name)
+
 
 #Portfolio model test
 class ProjectTest(TestCase):

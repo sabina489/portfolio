@@ -52,6 +52,8 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView
 )
 
+from sabina import serializers
+
 #Home Section
 class HomeListView(ListView):
     template_name = 'home.html'
@@ -87,11 +89,15 @@ class AboutList(generics.ListCreateAPIView):
     serializer_class = AboutSerializer
 
 #Retrieve about section
+
 class AboutDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = About.objects.all()
     serializer_class = AboutSerializer
 
-
+#Model viewsset of About
+# class AboutModelViewSet(viewsets.ModelViewSet):
+#     queryset = About.objects.all()
+#     serializer_class = AboutSerializer
 
 # #Create
 # class AboutCreateView(ListView):
@@ -220,4 +226,3 @@ class ContactListAPIView(ListAPIView):
 # class EducationListView(List):
 #     model = Education
 
-    

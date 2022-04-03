@@ -49,19 +49,19 @@ class AboutViewTest(TestCase):
         self.assertIn(w.career, resp.data[0]["career"])
 
 #About detail view test
-# class AboutDetailViewTest(TestCase):
-#     def create_about(self, heading="about", career="IT",description="about test",profile_img="upload",updated="now"):
-#         return About.objects.create(heading=heading, career=career,description=description,profile_img=profile_img,updated=updated)
+class AboutDetailViewTest(TestCase):
+    def create_about(self, heading="about", career="IT",description="about test",profile_img="upload",updated="now"):
+        return About.objects.create(heading=heading, career=career,description=description,profile_img=profile_img,updated=updated)
         
-#     def test_AboutDetail_GET(self):
-#         w = self.detail_about()
-#         url = reverse("detail-api", args=[w.id])
-#         resp = self.client.get(url)
+    def test_AboutDetail_GET(self):
+        w = self.create_about()
+        url = reverse("about-detail-api", args=[w.id])
+        resp = self.client.get(url)
 
-#         self.assertEqual(resp.status_code, 200)
-#         print(resp.data)
+        self.assertEqual(resp.status_code, 200)
+        print(resp.data)
 
-#         self.assertIn(w.career, resp.data["career"])
+        self.assertIn(w.career, resp.data["career"])
 # Projects views test
 class ProjectViewTest(TestCase):
     def create_Project(self, image="image", link="this is a link"):
@@ -75,21 +75,21 @@ class ProjectViewTest(TestCase):
         print(resp.data[0])
         self.assertIn(w.link, resp.data[0]["link"])
 
-#Project detail test
-# class ProjectDetailViewTest(TestCase):
-#     def create_Project(self, image="image", link="this is a link"):
-#         return Project.objects.create(image=image, link=link)
-#     def test_ProjectDetail_GET(self):
-#         w = self.detail_project()
-#         url = reverse("detail-api", args=[w.id])
-#         resp = self.client.get(url)
+# Project detail test
+class ProjectDetailViewTest(TestCase):
+    def create_Project(self, image="image", link="this is a link"):
+        return Project.objects.create(image=image, link=link)
+    def test_ProjectDetail_GET(self):
+        w = self.create_Project()
+        url = reverse("project-detail-api", args=[w.id])
+        resp = self.client.get(url)
 
-#         self.assertEqual(resp.status_code, 200)
-#         print(resp.data)
+        self.assertEqual(resp.status_code, 200)
+        print(resp.data)
 
-#         self.assertIn(w.image, resp.data["image"])
+        self.assertIn(w.link, resp.data["link"])
 
-# #Education views test
+# Education views test
 class EducationViewTest(TestCase):
     def create_Education(self, year="year", level="education level"):
         return Education.objects.create(year=year,level=level)
@@ -101,6 +101,20 @@ class EducationViewTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         print(resp.data[0])
         self.assertIn(w.year, resp.data[0]["year"])
+
+# Education detail test
+# class EducationDetailViewTest(TestCase):
+#     def create_Education(self, year="year", level="education level"):
+#         return Education.objects.create(year=year,level=level)
+    
+#     def test_EducationDetail_GET(self):
+#         w = self.create_Education()
+#         url = reverse("education-detail-api", args=[w.id])
+#         resp = self.client.get(url)
+
+#         self.assertEqual(resp.status_code, 200)
+#         print(resp.data)
+#         self.assertIn(w.year, resp.data["year"])
 
 
 # Contact views test
@@ -116,7 +130,21 @@ class ContactViewTest(TestCase):
         print(resp.data[0])
         self.assertIn(w.phone, resp.data[0]["phone"])
 
-#Skills views test
+#Contact detail test
+class ContactDetailViewTest(TestCase):
+    def create_Contact(self, phone="phone number", email="email address"):
+        return Contact.objects.create(phone=phone,email=email)
+    def test_ContactDetail_GET(self):
+        w = self.create_Contact()
+        url = reverse("contact-detail-api", args=[w.id])
+        resp = self.client.get(url)
+
+        self.assertEqual(resp.status_code, 200)
+        print(resp.data)
+
+        self.assertIn(w.phone, resp.data["phone"])
+    
+
 # class CategoryViewTest(TestCase):
 #     def create_Category(self, name="abc", updated="now"):
 #         return Category.objects.create(name=name, updated=updated)

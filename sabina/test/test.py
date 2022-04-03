@@ -85,3 +85,16 @@
 #         resp = self.api_client.get('/api/home/', format='xml')
 #         self.assertValidXMLResponse(resp)
     
+#Testing the API
+# from tastypie.test import ResourceTestCase
+
+# class AboutResourceTest(ResourceTestCase):
+
+#     def test_get_api_json(self):
+#         resp = self.api_client.get('api/about', format = 'json')
+#         self.assertValidJSONResponse(resp)
+
+#     def test_get_api_xml(self):
+#         resp = self.api_client.get('/api/about', format='xml')
+#         self.assertValidXMLResponse(resp)
+

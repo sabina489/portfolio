@@ -32,20 +32,20 @@ urlpatterns = [
     path('about/', AboutListView.as_view()),
     path('api/about', AboutListAPIView.as_view(),name="about-api"),
     path('api/about/create', views.AboutList.as_view()),
-    path('api/about/<int:pk>/', views.AboutDetail.as_view()),
+    path('api/about/<int:pk>/', views.AboutDetail.as_view(), name="about-detail-api"),
     
     
     #Projects sections
     path('project/', ProjectListView.as_view()),
     path('api/project', ProjectListAPIView.as_view(), name="project-api"),
     path('api/project/create', views.ProjectList.as_view()),
-    path('api/project/<int:pk>/', views.ProjectDetail.as_view()),
+    path('api/project/<int:pk>/', views.ProjectDetail.as_view(), name="project-detail-api"),
    
 
     #Education section
     path('education/', EducationListView.as_view()),
     path('api/education/create', views.EducationList.as_view(), name="education-api"),
-    path('api/education/<int:pk>/', views.EducationDetail.as_view()),
+    path('api/education/<int:pk>/', views.EducationDetail.as_view(), name="education-detail-api"),
 
     #Skills section
     path('skills/', SkillsListView.as_view()),
@@ -59,7 +59,7 @@ urlpatterns = [
     path('contact/', ContactListView.as_view()),
     path('api/contact', ContactListAPIView.as_view()),
     path('api/contact/create', views.ContactList.as_view(), name="contact-api"),
-    path('api/contact/<int:pk>/', views.ContactDetail.as_view()),
+    path('api/contact/<int:pk>/', views.ContactDetail.as_view(), name="contact-detail-api"),
 
     # path('education/',TemplateView.as_view(template_name="education.html")),
     # path('skills/',TemplateView.as_view(template_name="skills.html")),
