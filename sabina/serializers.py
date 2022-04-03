@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Home, About, Profile, Category, Skills, Project, Education
+from .models import Contact, Home, About, Profile, Category, Skills, Project, Education
 
 
 #home
@@ -67,7 +67,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 #Contact section
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
-        model = About
+        model = Contact
         fields = [
             'phone',
             'email',

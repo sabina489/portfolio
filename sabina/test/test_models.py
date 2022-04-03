@@ -59,7 +59,7 @@ class EducationTest(TestCase):
 
 #Contact model test
 class ContactTest(TestCase):
-    def create_Contact(self, phone="phone number", email="email address"):
+    def create_Contact(self, phone="1234567890", email="email address"):
         return Contact.objects.create(phone=phone,email=email)
     
     def test_Contact_creation(self):

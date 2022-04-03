@@ -58,7 +58,6 @@ class HomeListView(ListView):
     context_object_name = 'home'
 
     def get_queryset(self):
-        """Return the last five published questions."""
         return Home.objects.latest('updated')
 
 #create home section
